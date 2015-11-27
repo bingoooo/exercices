@@ -1,7 +1,3 @@
-var foo = "bonjour, je m'appelle Benjamin</br> et je suis en train de faire une formation Simplon";
-
-var toto = "O LIBRE VEUX !!!!!";
-
 function comparChaine(str){
 	var maj = str.toUpperCase();
 	if (str == maj){
@@ -10,7 +6,18 @@ function comparChaine(str){
 		document.writeln(str + " : n'est pas qu'en majuscules.</br>")
 	}
 }
-
-comparChaine("blablablablablablabla");
-comparChaine(foo);
-comparChaine(toto);
+$(document).ready(function(){
+	//var chaine = comparChaine("Bonjour et Bienvenue !");
+	$('#identity').click(function(){
+		$('#main-content').load("ajax/identity.html");
+	});
+	$('#grade').click(function(){
+		$('#main-content').load("ajax/grade.html");
+	});
+	$('#work').click(function(){
+		$('#main-content').load("ajax/work.html");
+	});
+	$('#hobbies').click(function(){
+		$('#main-content').load("ajax/hobbies.html");
+	});
+});
