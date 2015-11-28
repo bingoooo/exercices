@@ -1,38 +1,55 @@
+body {
+	width:800px;
+	margin:auto;
+}
+
 #accueil{
 	font-size: 20px;
 	font-family:arial;
 	color: green;
-	position: fixed;
+	/*position: fixed;
 	left: 0;
-	top: 4px;
-
-
-
+	top: 4px;*/
 }
+
+#nav li {
+	display: inline;
+	margin:auto;
+}
+
+#nav li a {
+	font-family: Arial;
+	margin-right: 5em;
+	text-decoration: none;
+}
+
 #top-left{
 	font-size: 20px;
 	font-family:arial;
 	color: green;
-	position:fixed;
+	/*position:fixed;
     left: 0;
-	top: 4px;
+	top: 4px;*/
 }
+
 #top-right{
 	font-size: 20px;
 	font-family:arial;
 	color: green;
-	position: fixed;
+	/*position: fixed;
 	left: 0;
-	top: 4px;
-
-
+	top: 4px;*/
 }
-#ow-between{
+
+#low-between{
 	font-size: 20px;
 	font-family:arial;
 	color: green;
-	position: fixed;
+	/*position: fixed;
 	left: 0;
-	top: 4px;
+	top: 4px;*/
+}
 
+.hide {
+	display:none;
 }
