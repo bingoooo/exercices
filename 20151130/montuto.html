@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+		<title>Tutoriel HTML & CSS</title>
+	</head>
+	<body>
+		<h1 id="banner">Tutoriel HTML & CSS</h1>
+		<nav><!-- barre de navigation à implémenter-->
+			<ul>
+				<li id="html">HTML</li>
+				<ul id="html-ss" class="hide">
+					<li id="balises"><a href="#balises-ss">Les Balises</a></li>
+					<li id="attributs"><a href="#attributs-ss">Attributs</a></li>
+					<li id="special"><a href="#special-ss">Balises Spéciales</a></li>
+				</ul>
+				<li id="css">CSS</li>
+				<ul id="css-ss" class="hide">
+					<li id="synthaxe"><a href="#synthaxe-ss">Synthaxe et Règles</a></li>
+					<li id="selectors"><a href="#selectors-ss">Les sélecteurs</a></li>
+					<li id="pseudoclass"><a href="#pseudoclass-ss">Les pseudo classes</a></li>
+					<li id="boxmodel"><a href="#boxmodel-ss">Le Box Model</a></li>
+				</ul>
+				<li id="autre">Computer Science</li>
+				<ul id="autre-ss" class="hide">
+					<li id="dry"><a href="#dry-ss">Le DRY</a></li>
+					<li id="soc"><a href="#soc-ss">Le SoC</a></li>
+				</ul>
+			</ul>
+		</nav>
+		<div id="container">
+		<div class="separation"></div>
+		<div id="main-content"><!-- contenu du site, à implémenter -->
+			<h2>HTML</h2>
+			<!-- Chapitre sur les balises-->
+			<div  id="balises-ss" class="hide">
+			<h3>Les Balises</h3>
+				<p>
+			Les balises sont des éléments de structure de données. On ouvre avec le signe '<', on 
+			ajoute le nom de la balise, et on la ferme avec '>'. Exemple : &lt;div&gt;, &lt;span&gt;, &lt;p&gt; ...<br>
+			On distingue deux types de balises : ouvrantes et fermantes<br><br>
+			&lt;div&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contenu...<br>
+			&lt;/div&gt;<br><br>
+			Dans le premier cas, on trouve également des balises ouvrantes auto-fermantes. Exemple : &lt;img /&gt; n'a pas de balises fermantes.<br>
+			Nos balises sont des indicateurs pour le navigateur. L'utilisateur ne perçoit que le contenu.<br>
+			Dans certains cas, nous avons besoin de plus dinformations à transmettre au navigateur. Pour une image, il faut lui donner l'url de l'image. On utilise l'atteibut 'src' au sein de la balise. L'idée est toujours de donner des informations supplémentaires au navigateur.<br><br>
+			Exemple : une image<br>
+			&lt;img src="url_de_mon_image.jpg"/&gt;<br>
+				</p>
+			</div>
+
+			<!-- Chapitre sur les Attributs-->
+			<div id="attributs-ss" class="hide">
+			<h3>Attributs</h3>
+				<p>
+			Les attributs se situent toujours à l'intérieur des balises à laquelle ils sont associés, à l'extérieur, c'est du contenu.
+			On distingue deux type des d'attributs : <br>
+			<ul>
+				<li>obligatoire (sans lesquels la balise n'a pas de sens : comme 'src' de &lt;img&gt;) avec alt (alternative text pour une image)</li>
+			<li>optionnel, comme son nom l'indique comme pour : title</li>
+			</ul>
+			code<br>
+				&lt;img src="image.jpg" alt="texte alternatif à l'image", title="intitulé de l'image"&gt;<br><br>
+				Dans une optique d'accessibilité, il est vital de mettre ces balises 'alt'.<br>
+				Les attributs ont une casse spéciale : pas de majuscule, pas de chiffre, pas de caractère spécial ($ ou autre). Séparation par des espaces notation de type clé="valeur", on peut utiliser certains attributs sans la valeur on peut utiliser ses propres attributs qui ne sont pas standard du moment que l'on évite de les nommer comme les attributs standard (utile surtout pour des interactions avec JavaScript)<br>
+			<br>
+				Exemple : &lt;img src="course.jpg" simplo="cours_01" alt="démo d'un attribut"&gt;
+			</br><br>
+			Un id doit être unique<br>
+			Les classes peuvent être multiples séparés par un espace. Ex: class="valeur1 valeur2" -> &lt;img class="fullscreen brd"&gt;<br>
+				</p>
+			</div>
+
+			<!-- Chapitre sur les Balises Spéciales -->
+			<div id="special-ss" class="hide">
+			<h3>Balises spéciales</h3>
+				<p>
+					Les balises génériques comme div et span n'ont pas de signification particulière<br>
+				</p>
+			</div>
+
+			<div class="separation"></div>
+
+			<!-- Chapitre su -->
+			<h2>CSS</h2>
+			<div id="synthaxe-ss" class="hide">
+			<h3>Syntaxe et règles</h3>
+				<p>
+					CSS signifie Cascading Style Sheet, ou feuille de style en cascade. Il est utilisé pour la mise en forme et la présentaion de blocs HTML. Le Html s'occupe du fond, du texte et du contenu, le CSS s'occupe de la mise en forme.<br><br>
+					Pourquoi Cascading ?<br>
+					Parce que les éléments sont traités de bas en haut et les éléments en priorité sont ceux qui sont en bas.<br>
+			Dans le cas où l'on recréé une autre classe de style, elle va écraser les valeurs qui ont été définies et garder les autres.<br>
+			Attention, il existe "!important", à ce moment, il ne modifiera pas la valeur CSS.<br><br>Ex : color : red !important; (pour résolution de conflits)<br><br>
+			Exemple : <br>
+			<div>class="color1 color2 color3"</div>
+			.color1{}<br>
+			.color3{}<br>
+			.color2{}<br>
+			color2 sera appliqué.<br>
+
+				</p>
+			</div>
+			<div id="selectors-ss" class="hide">
+			<h3>Les sélecteurs</h3>
+				<p></p>
+			</div>
+			<div id="pseudoclass-ss" class="hide">
+			<h3>Les pseudo classe</h3>
+				<p></p>
+			</div>
+
+			<div id="boxmodel-ss" class="hide">
+			<h2>Le Box Model</h2>
+				<p>
+				La taille d'un élément est défini par l'élément lui-même, le padding (l'espace entre l'élément et sa bordure), la bordure et la marge (espace en dehors de la bordure)<br>
+				Lorsque l'on appelle width, cela défini la largeur de l'élément, le padding et la bordure, sans la marge<br>
+				Pour s'affranchir des conditions de base du navigateur on utilise alors<br> box-sizing: border-box</p>
+			</div>
+
+
+			<div class="separation"></div>
+
+			<h2>Computer Science</h2>
+			<div id="dry-ss" class="hide">
+				<h3>Le DRY</h3>
+					<p>Le DRY ou Don't Repeat Yourself est la méthode de travail consistant à fonctionnaliser les taches répétitives en utilisant les outils de la programmation.</p>
+			</div>
+
+			<div id="soc-ss">
+			<h3>Le SoC (Separation of Concern)</h3>
+				<p>
+				Le SoC ou séparation of concerns désigne le fait de séparer des éléments qui n'ont pas de liens entre eux.<br><br>
+				Pourquoi ?<br> Pour la maintenance du code, son l'évolutivité (lorsque l'on redonne le code à un collaborateur), le standard (afin que chacun puisse s'y retrouver).
+				Dans notre cas, la séparation se fait de la manière suivante : Forme (CSS), Fond(HTML), Intéraction(JavaScript)
+				</p>
+			</div>
+		</div>
+		</div>
+	</body>
+	<footer>
+		<script type="text/javascript" src="js/script.js"></script>
+	</footer>
+</html>
+<!-- mon comment -->

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="eng">
+	<head>
+			<meta charset="utf-8">
+			<title>Tutoriel</title>
+	</head>
+	<body>
+		<h1>Les Balises</h1>
+		<p>Les balises sont des éléments de structure de données. On ouvre avec le signe '<', on 
+			ajoute le nom de la balise, et on la ferme avec '>'. Exemple : &lt;div&gt;, &lt;span&gt;, &lt;p&gt; ...</p>
+		<p>On distingue deux types de balises : ouvrantes et fermantes</p>
+		<div>
+			Contenu...
+		</div>
+		<p>Dans le premier cas, on trouve également des balises ouvrantes auto-fermantes. Exemple : <img /> n'a pas de balises fermantes.</p>
+		<p>Nos balises sont des indicateurs pour le navigateur. L'utilisateur ne perçoit que le contenu.</p>
+		<p>Dans certains cas, nous avons besoin de plus dinformations à transmettre au navigateur. Pour une image, il faut lui donner l'url de l'image. On utilise l'atteibut 'src' au sein de la balise. L'idée est toujours de donner des informations supplémentaires au navigateur.
+			Exemple : une image
+			<img src="url_de_mon_image.jpg"/>
+		</p>
+		<p>Les attributs se situent toujours à l'intérieur des balises à laquelle ils sont associés, à l'extérieur, c'est du contenu.
+			On distingue deux type des d'attributs</p>
+		<ul>
+			<li>obligatoire (sans lesquels la balise n'a pas de sens : comme 'src' de <img>) avec alt (alternative text pour une image)</li>
+			<li>optionnel, comme son nom l'indique comme pour : title</li>
+		</ul>
+		<code>
+			<img src="" alt="", title="">
+		</code>
+		<p title="">
+			Dans une optique d'accessibilité, il est vital de mettre ces balises 'alt'.
+		</p>
+		<p>
+			Les attributs ont une casse spéciale : pas de majuscule, pas de chiffre, pas de caractère spécial ($ ou autre). Séparation par des espaces notation de type clé="valeur", on peut utiliser certains attributs sans la valeur on peut utiliser ses propres attributs qui ne sont pas standard du moment que l'on évite de les nommer comme les attributs standard (utile surtout pour des interactions avec JavaScript)
+			<em>
+				Exemple : <img src="course.jpg" simplo="cours_01" alt="démo d'un attribut">
+			</em>
+			Un id doit être unique
+			Les classes peuvent être multiples séparés par un espace. Ex: class="valeur1 valeur2" -> <img class="fullscreen brd">
+		</p>
+		<p>
+			Balises génériques div et span qui n'ont pas de signification particulière
+		</p>
+		<p>
+			Balise particulières img, br, ou qui ont un sens sémantiquement comme nav, blockquote, p, a une des premières balises pour représenter un lien</br>
+			Pour la liste des balises, consulter le MDN
+		</p>
+		<p>
+			Entités HTML : &name; &lsaquo; &rsaquo; &lt; &gt;
+			lt : lower-than-sign
+			gt : greater-than-sign
+		</p>
+
+		<h1>Les CSS</h1>
+		<p>Cascading Style Sheet</p>
+		<p>
+			Pour la mise en forme et la présentaion de blocs HTML. Le Html s'occupe du fond, du texte et du contenu.
+		</p>
+		<h3>Pourquoi Cascading</h3>
+		<p>
+			Style Sheet : feuille de style<br>
+			Mais pourquoi la cascade, les éléments sont traités de bas en haut et les éléments en priorité sont ceux qui sont en bas.<br>
+			Dans le cas où l'on recréé une autre classe de style, elle va écraser les valeurs qui ont été définies et garder les autres.<br>
+			Attention, il existe !important, à ce moment, il ne modifiera pas la valeur CSS. Ex : color : red !important; (pour résolution de conflits)
+		</p>
+		<p>
+			Exemple : <br>
+			<div>class="color1 color2 color3"</div>
+			.color1{}<br>
+			.color3{}<br>
+			.color2{}<br>
+			color2 sera appliqué.<br>
+		</p>
+		<p>
+			lettrine:first-letter{}
+		</p>
+		<h3>Spécificité</h3>
+		<p>	1 : Ordre dans la cascade<br>
+			2 : id (#) -> classe (.) -> élément (tag)<br>
+			Comportement basique du CSS
+		</p>
+		<p>
+			Attribut style en HTML à éviter!!!
+		</p>
+		<h3>Sélection d'un élément</h3>
+		<p>
+			un élément nom de l'élément : p div span...<br>
+			une classe : .nomDeLaClasse<br>
+			un id : #id<br>
+			un attribut : [nomAttribut="valeur"] Ex: [kawai] [kawai=1000] [kawai=^1]
+		</p>
+		<p>
+			Les Blocs
+				display : block, inline, inlline-block, flex
+			Élément de type block car il prend par défaut toute la taille de la page
+			Le navigateur emploie des feuilles de style par défaut mais on peut les modifier
+
+			Le Box Model
+				élément, padding, bordure, marge
+				width défini la largeur de l'élément, le padding et la bordure, sans la marge
+				box-sizing : border-box; -> pour s'affranchir des conditions de base du navigateur.
+
+			SoC (Separation of Concern)
+				Séparation des éléments qui n'ont pas de liens entre eux.
+				Pourquoi ? pour la maintenance, l'évolutivité, le standard
+				Séparation, Forme (CSS), Fond(HTML), Intéraction(JavaScript)
+		</p>
+	</body>
+	<footer></footer>
+</html>
