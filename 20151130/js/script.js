@@ -17,9 +17,11 @@ function hide(id){
 }
 
 $(document).ready(function(){
-	for (var i = 0; i < hiddenContent.length; i++){
-		hide(hiddenContent[i]);
+	for (var i = 0; i < navPrior.length; i++){
+		var content = navPrior[i] + '-ss';
+		hide(content);
 	};
+	hide('#soc-ss');
 	for (var i = 0; i < navPrior.length; i++){
 		clickToHide(navPrior[i]);
 	};
