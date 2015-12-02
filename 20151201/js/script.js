@@ -21,7 +21,8 @@ function fizzReturn(value){
 function fizzbuzz (value) {
 	//votre code ici
 
-	return ((x = (value%3?'':'fizz')+(value%5?'':'buzz'))?x:value);
+	var x = (value%3)?'':'fizz' + (value%5)?'':'buzz';
+	return (x)?x:value;
 
 	//return fizzReturn(value);
 	
@@ -36,4 +37,31 @@ function lesCentsPremiers(){
 	return result;
 }
 
-console.log(lesCentsPremiers());
+//console.log(lesCentsPremiers());
+
+function getStatus(isBusy) {
+  this.msg = (isBusy ? "busy" : "available");
+  this.status;
+  return this.status = msg;
+  //this.msg = (isBusy ? "busy" : "available");
+  //return this.status = this.msg();
+}
+
+console.log(getStatus(true).status);
+
+/*function Person(name){
+	this.name = name;
+	this.salut = function(){
+		return 'Salut';
+	}
+}
+
+Person.prototype.prenom = "Moi";
+Person.prototype.greet = function(otherName){
+	return "Bonjour, " + otherName + ", je m'appelle " + this.name;
+}
+
+var ben = new Person("Benjamin");
+console.log(ben.greet("Marie"));
+console.log(ben.salut());
+console.log(ben.prenom);*/
