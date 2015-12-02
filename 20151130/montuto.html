@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h1 id="banner">Tutoriel HTML & CSS</h1>
-		<nav><!-- barre de navigation à implémenter-->
+		<nav><!-- barre de navigation -->
 			<ul>
 				<li id="html">HTML</li>
 				<ul id="html-ss">
@@ -32,7 +32,7 @@
 		</nav>
 		<div id="container">
 		<div class="separation"></div>
-		<div id="main-content"><!-- contenu du site, à implémenter -->
+		<div id="main-content"><!-- contenu du site -->
 			<h2>HTML</h2>
 			<!-- Chapitre sur les balises-->
 			<div  id="balises-ss">
@@ -56,8 +56,8 @@
 			<div id="attributs-ss">
 			<h3>Attributs</h3>
 				<p>
-			Les attributs se situent toujours à l'intérieur des balises à laquelle ils sont associés, à l'extérieur, c'est du contenu.
-			On distingue deux type des d'attributs : <br>
+			Les attributs se situent toujours à l'intérieur des balises auquelles ils sont associés, à l'extérieur de celles-ci, le navigateur le considèrera comme du contenu et l'affichera en tant que tel.<br>
+			On distingue deux type d'attributs : <br>
 			<ul>
 				<li>obligatoire (sans lesquels la balise n'a pas de sens : comme 'src' de &lt;img&gt;) avec alt (alternative text pour une image)</li>
 			<li>optionnel, comme son nom l'indique comme pour : title</li>
@@ -65,12 +65,17 @@
 			code<br>
 				&lt;img src="image.jpg" alt="texte alternatif à l'image", title="intitulé de l'image"&gt;<br><br>
 				Dans une optique d'accessibilité, il est vital de mettre ces balises 'alt'.<br>
-				Les attributs ont une casse spéciale : pas de majuscule, pas de chiffre, pas de caractère spécial ($ ou autre). Séparation par des espaces notation de type clé="valeur", on peut utiliser certains attributs sans la valeur on peut utiliser ses propres attributs qui ne sont pas standard du moment que l'on évite de les nommer comme les attributs standard (utile surtout pour des interactions avec JavaScript)<br>
+				Les attributs ont une casse spéciale : pas de majuscule, pas de chiffre, pas de caractère spécial ($ ou autre). Ils sont séparés par des espaces en notation de type "clé=valeur".<br>
+				On peut utiliser certains attributs sans la valeur et on peut aussi utiliser ses propres attributs du moment que l'on évite de les nommer comme les attributs standards (ce qui est surtout utile pour des interactions avec JavaScript)<br>
 			<br>
 				Exemple : &lt;img src="course.jpg" simplo="cours_01" alt="démo d'un attribut"&gt;
 			</br><br>
-			Un id doit être unique<br>
-			Les classes peuvent être multiples séparés par un espace. Ex: class="valeur1 valeur2" -> &lt;img class="fullscreen brd"&gt;<br>
+			On peut définir plusieurs types d'attributs spécifiques au HTML.<br>
+			Les id noté : id="nomId"<br>
+			Un id doit être unique et ne doit pas être retrouvé dans une autre balise<br><br>
+			Les classes noté : class="nomDeClasse"<br>
+			Les classes peuvent être multiples mais séparées par un espace.<br>
+			Ex: class="valeur1 valeur2" -> &lt;img class="fullscreen brd"&gt;<br>
 				</p>
 			</div>
 
@@ -78,14 +83,17 @@
 			<div id="special-ss">
 			<h3>Balises spéciales</h3>
 				<p>
+					On distingue deux types de balises : les balises génériques et les balises particulières.<br><br>
 					Les balises génériques comme div et span n'ont pas de signification particulière<br>
+					Les balises particulières  sont du type : img, br... qui sont interprêtées ou qui ont un sens sémantiquement comme nav, blockquote, p, a une des premières balises pour représenter un lien</br>
+			Pour la liste des balises, consulter le MDN
 				</p>
 			</div>
 
 			<div class="separation"></div>
 
-			<!-- Chapitre su -->
 			<h2>CSS</h2>
+			<!-- Chapitre sur la synthaxexe CSS -->
 			<div id="synthaxe-ss">
 			<h3>Syntaxe et règles</h3>
 				<p>
@@ -144,4 +152,3 @@
 		<script type="text/javascript" src="js/script.js"></script>
 	</footer>
 </html>
-<!-- mon comment -->
