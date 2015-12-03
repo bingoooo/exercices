@@ -5,6 +5,7 @@ body {
 }
 
 nav {
+	width:1000px;
 	background-color: rgba(0,0,100,0.9);
 	padding: 40px;
 }
