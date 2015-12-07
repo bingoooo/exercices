@@ -38,7 +38,7 @@ ul {
 	width:14px;
 }
 
-.checked {
+.ischecked {
 	text-decoration: line-through;
 	color: lightgrey;
 }
@@ -50,6 +50,10 @@ ul {
 button {
 	font-weight: bold;
 	background-color: lightblue;
+}
+
+button:hover {
+	background-color: rgba(200,0,0,0.7);
 }
 
 .delete {
