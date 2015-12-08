@@ -5,14 +5,15 @@
 		<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
+		<!--script type="text/javascript" src="js/app.js"></script-->
+		<script type="text/javascript" src="js/appjo.js"></script>
 	</head>
 	<body>
 		<h1>Session du 07-12-2015</h1>
 		<h2>Todo App</h2>
 		<div id="main-box">
 			<form>
-				<input id="newTodo" placeholder="Quelque chose à faire..." autofocus>		
+				<input id="newTodo" placeholder="Quelque chose à faire..." autofocus><!--button id="#add-button">+</button-->		
 			</form>
 
 			<form>	
@@ -26,11 +27,11 @@
 			<footer>
 				<div id="status"> 0 items left</div>
 				<div id="display-options">
-					<div id="show-all" class="selectable selected">All</div>
+					<div id="show-all" class="selectable">All</div>
 					<div id="active" class="selectable">Active</div>
 					<div id="completed" class="selectable">Completed</div>
+					<div id="clear" class="selectable">Clear Completed</div>
 				</div>
-				<div id="clear">Clear Completed</div>
 			</footer>
 		</div>
 		<section id="main">
