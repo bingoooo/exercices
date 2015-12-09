@@ -17,11 +17,12 @@ $(document).ready(function(){
 			todoText1 : '<div class="todo"><input type="checkbox" class="todo-checkbox" {checked}><span class="todo-content">',
 			todoText2 : '</span><button class="delete">X</button></div>',
 
-			//Fonction de rafraichissement du Nombre d'éléments du tableau
+			//Fonction de rafraichissement du Nombre d'éléments du tableau <----- à implémenter
 			updateElements : function(){
 				
 			},
 
+			//Fonction de mise à jour du nombre d'éléments dans la liste de tâches
 			updateItemCount : function(){
 				var size = $('#todolist').children().size();
 				(size < 2)?$('#status').html(size + " item left"):$('#status').html(size + " items left");
@@ -36,34 +37,32 @@ $(document).ready(function(){
 				});
 			},
 
-
+			//Fonction attachée à l'élément checkbox
 			checkboxElem : function(){
 				$('.todo-checkbox').change(function(event){
 					event.preventDefault();
-					if (this.checked){
-						$(this).parent().addClass('done');
-						$(this).parent().find("span").addClass('ischecked');
+					if (this.checked){						//Test de la condition de l'élément checkbox
+						$(this).parent().addClass('done');						//ajoute la classe 'done' à l'élément parent
+						$(this).parent().find("span").addClass('ischecked');	//ajoute la classe 'ischecked' à l'élément frère au tag "span"
 					} else {
-						$(this).parent().removeClass('done');
-						$(this).parent().find("span").removeClass('ischecked');
+						$(this).parent().removeClass('done');					//retire la classe 'done' à l'élément parent		
+						$(this).parent().find("span").removeClass('ischecked');	//retire la classe 'ischecked' à l'élément frère au tag "span"
 					}
 				});
 			},
 
-			showAll : function(){
-				$('.todo').show();
-			},
-			hideAll : function(){
-				$('.todo').hide();
+			//Fonction associée au boutton All qui montre tous les éléments de la liste ("todo")
 			},
 			all : function(){
 				$('#show-all').on("click", function(){
 					//app.showAll();
-					$('.todo').show();
-					$('.selectable').removeClass('selected');
-					$(this).addClass('selected');
+					$('.todo').show();		//montre tous les éléments de classe "todo"
+					$('.selectable').removeClass('selected');	//retire la classe "selected" de tous les éléments de classe "selectable"
+					$(this).addClass('selected');				//ajoute la classe "selected" au boutton All
 				});
 			},
+
+			//Fonction associée au boutton Active
 			active : function(){
 				$('#active').on("click", function(){
 					//app.showAll();
@@ -73,6 +72,8 @@ $(document).ready(function(){
 					$(this).addClass('selected');
 				});
 			},
+
+			//Fonction associée au boutton Cmpleted
 			completed : function(){
 				$('#completed').on("click", function(){
 					$('.todo').hide();
@@ -81,6 +82,8 @@ $(document).ready(function(){
 					$(this).addClass('selected');
 				});
 			},
+
+			//Fonction associée au boutton Clear
 			clear : function(){
 				$('#clear').on("click", function(){
 					$('.selectable').removeClass('selected');
@@ -89,6 +92,8 @@ $(document).ready(function(){
 					app.updateItemCount();
 				});
 			},
+
+			//Fonction associée à l'input utilisateur
 			addToList : function(){
 				var text = $('#newTodo').val();
 				$('#newTodo').val('');
@@ -124,7 +129,8 @@ $(document).ready(function(){
 					event.stopPropagation();
 					app.addToList();
 				});
-			}
+			},
+			// Ajouter un tableau qui liste les valeurs
 		};
 	
 	app.init();
