@@ -23,7 +23,8 @@ $(document).ready(function(){
 			},
 
 			updateItemCount : function(){
-				$('#status').html($('#todolist').children().size() + " items left");
+				var size = $('#todolist').children().size();
+				(size < 2)?$('#status').html(size + " item left"):$('#status').html(size + " items left");
 			},
 
 			//Fonction lié au boutton qui supprime l'élément correspondant de la liste
@@ -31,7 +32,7 @@ $(document).ready(function(){
 				$('.delete').click(function(event){
 					event.preventDefault;
 					$(this).parent().remove();
-					app.updateItemCount(app.state, app.items);
+					app.updateItemCount();
 				});
 			},
 
@@ -57,14 +58,16 @@ $(document).ready(function(){
 			},
 			all : function(){
 				$('#show-all').on("click", function(){
-					app.showAll();
+					//app.showAll();
+					$('.todo').show();
 					$('.selectable').removeClass('selected');
 					$(this).addClass('selected');
 				});
 			},
 			active : function(){
 				$('#active').on("click", function(){
-					app.showAll();
+					//app.showAll();
+					$('.todo').show()
 					$('.done').hide();
 					$('.selectable').removeClass('selected');
 					$(this).addClass('selected');
@@ -72,7 +75,7 @@ $(document).ready(function(){
 			},
 			completed : function(){
 				$('#completed').on("click", function(){
-					app.hideAll();
+					$('.todo').hide();
 					$('.done').show();
 					$('.selectable').removeClass('selected');
 					$(this).addClass('selected');
@@ -83,6 +86,7 @@ $(document).ready(function(){
 					$('.selectable').removeClass('selected');
 					$(this).addClass('selected');
 					$('.done').remove();
+					app.updateItemCount();
 				});
 			},
 			addToList : function(){
