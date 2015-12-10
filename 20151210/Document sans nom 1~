@@ -1,0 +1,8 @@
+Notes 10-12-2015
+
+	Idiomatic JS
+
+Convention, style de code, ensemble de règles pour faciliter la collaboration
+Partager son code avec les autres, ou lorsque l'on reprend le code plus tard. N'est pas un dogme
+
+JSHint : permet de vérifier le style de code, intercepte les erreurs de code plus tôt
