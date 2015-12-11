@@ -1,4 +1,4 @@
-
+"use strict";
 //Créer un objet app qui exécutera le code directement en appelant app.init()
 
 
@@ -18,17 +18,21 @@ $(document).ready(function(){
 //
 			//Fonction initialisant les évènements au rafraichissement de la page
 			elements : function(){
-				$('#newTodo').on("keypress",this.addToList);	//Event listener lié à l'ajout d'une tache (input id="newTodo")
+				$('#newTodo').on("keypress",app.addToList);	//Event listener lié à l'ajout d'une tache (input id="newTodo") appui sur Entrée
+				//$('#newTodo').submit(app.addToList2);
+				//$('#todolist').on("change", 'span:todo-content', app.editTask);
+				$('#show-all').on("click", app.all);			//Event listener lié au boutton All (montre toutes les taches)
+				$('#active').on("click", app.active);			//Event listener lié au boutton Active (montre les taches en cours, non cochées)
+				$('#completed').on("click", app.completed);	//Event listener lié au boutton Completed (montre les taches finies, cochées)
+				$('#clear').on("click", app.clear);			//Event listener lié au boutton Clear (efface les taches finies, cochées)
+				//$('.todo-content').on("dbclick", this.editTask);
 				app.updateItemCount();							//Rafraichissement du nombre de tâches à accomplir
-				$('#show-all').on("click", this.all);			//Event listener lié au boutton All (montre toutes les taches)
-				$('#active').on("click", this.active);			//Event listener lié 
-				$('#completed').on("click", this.completed);
-				$('#clear').on("click", this.clear);
 			},
 			//Fonction qui met à jour les évènements liés à la liste des tâches
 			updateList : function(){
-				$('.delete').click(this.removeParent);			//évènement lié au bouton 'delete'
-				$('.todo-checkbox').change(this.checkboxElem);	//évènement lié à la checkbox
+				$('.delete').click(app.removeParent);			//évènement lié au bouton 'delete'
+				$('.todo-checkbox').change(app.checkboxElem);	//évènement lié à la checkbox
+				//$('span').on("click", app.editTask);			//évènement lié à l'édition d'une tâche
 			},
 
 
@@ -68,9 +72,8 @@ $(document).ready(function(){
 
 			//Fonction associée au boutton Active
 			active : function(){
-					//app.showAll();
-					$('.todo').show()
-					$('.done').hide();
+					$('.todo').show()		//Montre les éléments de classe "todo" (les taches)
+					$('.done').hide();		//Cache les éléments de classe "done" ()
 					$('.selectable').removeClass('selected');
 					$(this).addClass('selected');
 					},
@@ -96,16 +99,39 @@ $(document).ready(function(){
 				if (event.which == 13) {
 					event.preventDefault();
 					var text = $('#newTodo').val();
-					$('#newTodo').val('');
-					$('#todolist').prepend(app.todoHtmlPre + text + app.todoHtmlPost);
-					app.updateList();
-					app.updateItemCount();
+					if (text != ''){
+						$('#newTodo').val('');
+						$('#todolist').prepend(app.todoHtmlPre + text + app.todoHtmlPost);
+						app.updateList();
+						app.updateItemCount();
+					}
 				};
 			},
-			// Ajouter un tableau qui liste les valeurs
+			addToList2 : function(event){
+				event.preventDefault();
+				//event.stopImmediatePropagation();
+				console.log('submit');
+			},
+			editTask : function(event){
+				event.preventDefault();
+				var target = $(this).parent();
+				var task = $(this).html();
+				$(this).remove();
+				target.prepend('<input class="edit" placeholder="Quelque chose à faire..." value=' + task + ' autofocus>');
+				$('.edit').on("keypress", function(event){
+					//$(this).val(task);
+					if (event.which == 13){
+						var task = $(this).val();
+						$(this).remove();
+						target.append('<span class="todo-content">' + task + '</span>');
+						app.updateList();
+					}
+				});
+				console.log(task);
+			}
+			// Ajouter un tableau qui liste les valeurs optionnel
 		};
 	
-	app.init();
-	//console.log(app);
-	
+	//Appel de la fonction principale exécutant le code JS
+	app.init();	
 })

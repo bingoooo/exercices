@@ -65,7 +65,10 @@ ul {
 .todo-content {
 	font-size:19px;
 }
-
+.edit {
+	width:auto;
+	height: 1em;
+}
 button {
 	text-align: center;
 	font-weight: bold;
