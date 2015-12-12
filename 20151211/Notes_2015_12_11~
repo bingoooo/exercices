@@ -1,0 +1,5 @@
+Notes du 11-12-2015
+
+
+browser-sync
+	surveille les changements de fichier, rafraîchi la page automatiquement : sudo npm install -g browser-sync
