@@ -1,0 +1,28 @@
+nav {
+	height: 4em;
+	background-color: grey;
+	li {
+		display: inline;
+	}
+}
+ul {
+	list-style-type: none;
+}
+#cart-shop {
+	width : 80%;
+	margin : auto;
+	background-color: rgba(200,200,200,0.5);
+}
+#bloc {
+	float:left;
+	width : 90%;
+	height : 50px;
+}
+.shop .icon {
+	position : relative;
+}
+
+#shopping-list {
+	width : 80%;
+	margin : auto;
+}

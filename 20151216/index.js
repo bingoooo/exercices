@@ -46,7 +46,8 @@ var me = {
 		tab.push(this.name, this.last_name + '\n',
 			'I am born the', this.birthday + ',',
 			'I am a ', this.occupation + '\n',
-			'Get my work from github : ', this.getGithub() + '\n');
+			'Get my work from github : ', this.getGithub()
+			+ '\n');
 		return tab;
 	}
 }

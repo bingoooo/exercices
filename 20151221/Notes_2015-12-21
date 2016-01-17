@@ -1,0 +1,15 @@
+Systeme Karma
+Postage
+
+Avec fichiers json
+	user.json
+		Nom, prenom, profil, pseudo, stats (), karma
+
+	news.json
+		type, catégorie, nom, lien, description
+
+@simplon 1000 karma
+
+stagiaires 50 karma
+
+
