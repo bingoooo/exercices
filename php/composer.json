@@ -1,0 +1,8 @@
+{
+    "require": {
+        "fzaninotto/faker": "^1.5",
+        "league/plates": "^3.1",
+        "illuminate/database": "^5.2",
+        "illuminate/events": "^5.2"
+    }
+}
