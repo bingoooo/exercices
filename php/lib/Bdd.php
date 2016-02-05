@@ -12,6 +12,7 @@
 		private $questions;
 		private $reponses;
 		public function __construct(){
+			parent::construct();
 			$this->capsule = new Capsule;
 			$this->capsule->addConnection([
 				'driver' => 'mysql',
